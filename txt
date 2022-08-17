@@ -1,0 +1,9 @@
+1. set up fetch
+2. if i search a city in search bar, it becomes query parameter to search 
+for weather in that area (Temp, wind, humitity, UV)
+3. when that item is searched it shows up with div presenting weather for that day
+4. below it shows div for next 4 days with icons for weather
+5. UV is color coded based on if it's good
+6. searched city is saved and displayed as a button you can press to redisplay info
+7. when a new city is searched/clicked, the previous data is cleared and new data
+appears in its place
