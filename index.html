@@ -25,17 +25,24 @@
           id="citySelector"
           class="col-12 col-xl-4 col-md-4 col-sm-4 bg-dark text-light">
           <label for="city">City</label>
-          <input type="text" id="citySearch" class="">
+          <input type="text" id="citySearch" name="cityInput">
           <br>
           <label for="city">State</label>
           <input type="text" id="stateSearch" class="">
           <button type="button" class="btn btn-primary m-2" id="searchBtn">Search</button>
-          <hr class="border border-primary border-3 opacity-75">          
+          <hr class="border border-primary border-3 opacity-75">  
+          <div id="searchHistory"></div>        
         </div>
         <div
           id="weatherData"
           class="col-12 col-xl-8 col-md-8 col-sm-8 bg-primary"
-        ></div>
+        >
+      <div id="day1Div" class="reset"></div>
+      <div id="day2Div" class="reset"></div>
+      <div id="day3Div" class="reset"></div>
+      <div id="day4Div" class="reset"></div>
+      <div id="day5Div" class="reset"></div>
+      </div>
       </div>
     </div>
     <script
