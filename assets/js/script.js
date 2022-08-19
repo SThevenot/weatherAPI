@@ -78,6 +78,7 @@ function getWeather() {
       weatherDataDiv.append(stateDisplay);
       var data = data.data;
       for (var i = 0; i < data.length; i++) {
+        console.log(data);
         var cityDate = document.createElement("h3");
         var cityTemp = document.createElement("p");
         var cityWind = document.createElement("p");
@@ -85,7 +86,10 @@ function getWeather() {
         var cityUv = document.createElement("p");
         var weatherDiv = document.createElement("div");
         var hr = document.createElement("hr");
-        cityDate.textContent = "data: " + data[i].datetime;
+        var weatherPic = document.createElement("img");
+        weatherDescription = document.createElement("p");
+        weatherDescription.textContent = data[i].weather.description;
+        cityDate.textContent = "date: " + data[i].datetime;
         cityTemp.textContent = "temp: " + data[i].temp;
         cityWind.textContent = "wind speed: " + data[i].wind_gust_spd;
         cityHumidity.textContent = "humidity: " + data[i].dewpt;
@@ -99,9 +103,13 @@ function getWeather() {
         if (data[i].uv > 8) {
           cityUv.style.backgroundColor = "red";
         }
+        var iconCode = data[i].weather.icon;
+        weatherPic.setAttribute("src", "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png");
         weatherDiv.append(hr);
+        weatherDiv.append(weatherPic);
         weatherDataDiv.append(weatherDiv);
         weatherDiv.append(cityDate);
+        weatherDiv.append(weatherDescription);
         weatherDiv.append(cityTemp);
         weatherDiv.append(cityWind);
         weatherDiv.append(cityHumidity);
